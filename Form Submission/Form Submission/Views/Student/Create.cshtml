@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+@*<h4>@Request["Name"]</h4>
+    <h4>@Request["Id"]</h4>
+    <h4>@Request["Address"]</h4>
+    <h4>@Request["Email"]</h4>*@
+
+@*<h4>@ViewBag.Name</h4>
+    <h4>@ViewBag.Id</h4>
+    <h4>@ViewBag.Address</h4>
+    <h4>@ViewBag.Email</h4>*@
+@if (Model != null)
+{
+    <h4>@Model.Name</h4>
+    <h4>@Model.Id</h4>
+    <h4>@Model.Address</h4>
+    <h4>@Model.Email</h4>
+}
+
+<h2>Create</h2>
+<form method="post">
+    <input type="text" name="Name" placeholder="Name" class="form-control" />
+    <input type="text" name="Id" placeholder="Id" class="form-control" />
+    <input type="text" name="Address" placeholder="Address" class="form-control" />
+    <input type="text" name="Email" placeholder="Email" class="form-control" />
+    <input type="submit" class="btn btn-primary" value="Create" />
+</form>
+
