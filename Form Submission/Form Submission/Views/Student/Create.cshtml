@@ -20,12 +20,19 @@
     <h4>@Model.Email</h4>
 }
 
+@Html.ValidationSummary()
+
 <h2>Create</h2>
 <form method="post">
-    <input type="text" name="Name" placeholder="Name" class="form-control" />
-    <input type="text" name="Id" placeholder="Id" class="form-control" />
-    <input type="text" name="Address" placeholder="Address" class="form-control" />
-    <input type="text" name="Email" placeholder="Email" class="form-control" />
-    <input type="submit" class="btn btn-primary" value="Create" />
+    <input type="text" name="Name" value="@Model.Name" placeholder="Name" class="form-control" />
+    <span class="text-danger">@Html.ValidationMessage("Name")</span>
+    <input type="text" name="Id" value="@Model.Id" placeholder="Id" class="form-control" />
+    <span class="text-danger">@Html.ValidationMessage("Id")</span>
+    <input type="text" name="Address" value="@Model.Address" placeholder="Address" class="form-control" />
+    <span class="text-danger">@Html.ValidationMessage("Address")</span>
+    <input type="text" name="Email" value="@Model.Email" placeholder="Email" class="form-control" />
+    <span class="text-danger">@Html.ValidationMessage("Email")</span>
+
+    <br /><input type="submit" class="btn btn-primary" value="Create" />
 </form>
 

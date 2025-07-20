@@ -16,11 +16,14 @@ namespace Form_Submission.Controllers
         }
         [HttpGet]
         public ActionResult Create() {
-            return View();
+            return View(new Student());
         }
         [HttpPost]
-        public ActionResult Create(Student student) { 
-            
+        public ActionResult Create(Student student) {
+            if (ModelState.IsValid) //model validation
+            {
+                return RedirectToAction("Contact","Home");
+            }
             return View(student);
         }
         //public ActionResult Create(string Name, string Id, string Email) {
