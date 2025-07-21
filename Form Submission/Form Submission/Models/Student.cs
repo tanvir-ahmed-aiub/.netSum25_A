@@ -17,8 +17,16 @@ namespace Form_Submission.Models
         [Required]
         [EmailAddress]
         public string Email { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Address Is Needed")]
         [StringLength(1000,MinimumLength =10)]
         public string Address { get; set; }
+        [Required]
+        public string Gender { get; set; }
+        [Required]
+        public string Profession { get; set; }
+        [Required]
+        public string[] Hobbies { get; set; }
+        [Required]
+        public DateTime Dob { get; set; }
     }
 }
