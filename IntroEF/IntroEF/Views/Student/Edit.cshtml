@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form method="post">
+    <input type="text" class="form-control" value="@Model.Name" placeholder="Name" name="Name" />
+    <input type="text" class="form-control" value="@Model.Cgpa" placeholder="Cgpa" name="Cgpa" />
+    <input type="date" class="form-control" value="@Model.Dob.ToString("yyyy-MM-dd")" placeholder="Dob" name="Dob" />
+    <input type="submit" class="btn btn-danger" value="Create" />
+
+</form>
