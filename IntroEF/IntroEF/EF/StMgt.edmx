@@ -20,10 +20,27 @@
           <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Cgpa" Type="float" Nullable="false" />
           <Property Name="Dob" Type="date" Nullable="false" />
+          <Property Name="DeptId" Type="int" Nullable="false" />
         </EntityType>
+        <Association Name="FK_Students_Departments">
+          <End Role="Departments" Type="Self.Departments" Multiplicity="1" />
+          <End Role="Students" Type="Self.Students" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departments">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Students">
+              <PropertyRef Name="DeptId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="Sum25_AModelStoreContainer">
           <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Students_Departments" Association="Self.FK_Students_Departments">
+            <End Role="Departments" EntitySet="Departments" />
+            <End Role="Students" EntitySet="Students" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -35,6 +52,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Students" Relationship="Sum25_AModel.FK_Students_Departments" FromRole="Department" ToRole="Student" />
         </EntityType>
         <EntityType Name="Student">
           <Key>
@@ -44,11 +62,29 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Cgpa" Type="Double" Nullable="false" />
           <Property Name="Dob" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DeptId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Department" Relationship="Sum25_AModel.FK_Students_Departments" FromRole="Student" ToRole="Department" />
         </EntityType>
         <EntityContainer Name="Sum25_AEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Departments" EntityType="Self.Department" />
           <EntitySet Name="Students" EntityType="Self.Student" />
+          <AssociationSet Name="FK_Students_Departments" Association="Sum25_AModel.FK_Students_Departments">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_Students_Departments">
+          <End Type="Sum25_AModel.Department" Role="Department" Multiplicity="1" />
+          <End Type="Sum25_AModel.Student" Role="Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="DeptId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -66,6 +102,7 @@
           <EntitySetMapping Name="Students">
             <EntityTypeMapping TypeName="Sum25_AModel.Student">
               <MappingFragment StoreEntitySet="Students">
+                <ScalarProperty Name="DeptId" ColumnName="DeptId" />
                 <ScalarProperty Name="Dob" ColumnName="Dob" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />

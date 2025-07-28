@@ -15,9 +15,26 @@
     <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Cgpa" Type="float" Nullable="false" />
     <Property Name="Dob" Type="date" Nullable="false" />
+    <Property Name="DeptId" Type="int" Nullable="false" />
   </EntityType>
+  <Association Name="FK_Students_Departments">
+    <End Role="Departments" Type="Self.Departments" Multiplicity="1" />
+    <End Role="Students" Type="Self.Students" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Students">
+        <PropertyRef Name="DeptId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="Sum25_AModelStoreContainer">
     <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Students_Departments" Association="Self.FK_Students_Departments">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="Students" EntitySet="Students" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

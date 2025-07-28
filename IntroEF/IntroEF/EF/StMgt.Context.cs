@@ -18,6 +18,7 @@ namespace IntroEF.EF
         public Sum25_AEntities()
             : base("name=Sum25_AEntities")
         {
+            this.Configuration.LazyLoadingEnabled = false; //eager loading
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

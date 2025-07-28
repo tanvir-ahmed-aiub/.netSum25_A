@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<h3>Name: @Model.Name</h3>
+<h5>List of Students</h5>
+<table class="table table-condensed">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Cgpa</th>
+    </tr>
+    @foreach (var item in Model.Students)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Cgpa</td>
+        </tr>
+    }
+</table>

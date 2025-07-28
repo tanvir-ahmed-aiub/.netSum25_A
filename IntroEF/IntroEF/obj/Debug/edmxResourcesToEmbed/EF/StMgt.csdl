@@ -6,6 +6,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Students" Relationship="Sum25_AModel.FK_Students_Departments" FromRole="Department" ToRole="Student" />
   </EntityType>
   <EntityType Name="Student">
     <Key>
@@ -15,9 +16,27 @@
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Cgpa" Type="Double" Nullable="false" />
     <Property Name="Dob" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DeptId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Department" Relationship="Sum25_AModel.FK_Students_Departments" FromRole="Student" ToRole="Department" />
   </EntityType>
   <EntityContainer Name="Sum25_AEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Departments" EntityType="Self.Department" />
     <EntitySet Name="Students" EntityType="Self.Student" />
+    <AssociationSet Name="FK_Students_Departments" Association="Sum25_AModel.FK_Students_Departments">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="Student" EntitySet="Students" />
+    </AssociationSet>
   </EntityContainer>
+  <Association Name="FK_Students_Departments">
+    <End Type="Sum25_AModel.Department" Role="Department" Multiplicity="1" />
+    <End Type="Sum25_AModel.Student" Role="Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="DeptId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
