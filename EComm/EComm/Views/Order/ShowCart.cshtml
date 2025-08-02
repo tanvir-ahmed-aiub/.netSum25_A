@@ -1,0 +1,45 @@
+﻿
+
+<h2>Cart</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Qty</th>
+        <th>Unit Price</th>
+        <th>Total Price</th>
+    </tr>
+    @{ double gTotal = 0;double uTotal = 0;}
+    @foreach (var item in Model)
+    {
+        {
+            uTotal = item.Price * item.Qty;
+            gTotal += uTotal;
+        }
+        <tr>
+            <td>@item.Name</td>
+            <td>
+                <a href="/order/decrease/@item.Id"><span class="glyphicon glyphicon-minus"></span></a>
+                @item.Qty
+                <a href="/order/increase/@item.Id"><span class="glyphicon glyphicon-plus"></span></a>
+            </td>
+            <td>@item.Price</td>
+            <td>@uTotal</td>
+
+        </tr>
+    }
+    <tr>
+        <th class="text-right" colspan="3">Total:</th>
+        <th>@gTotal</th>
+
+    </tr>
+    <tr>
+        <td>
+            <form method="post" action="/Order/PlaceOrder">
+                <input type="hidden" name="gTotal" value="@gTotal" />
+                <input type="submit" value="Place Order" class="btn btn-danger" />
+            </form>
+        </td>
+    </tr>
+</table>
+
+    

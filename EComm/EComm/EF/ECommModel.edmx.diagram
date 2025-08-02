@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3f52f3760f8c490ab92a192214197929" Name="Diagram1">
+        <EntityTypeShape EntityType="EComm_Sum25_AModel.Customer" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="EComm_Sum25_AModel.OrderDetail" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="EComm_Sum25_AModel.Order" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="EComm_Sum25_AModel.Product" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EComm_Sum25_AModel.Status" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EComm_Sum25_AModel.User" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="EComm_Sum25_AModel.FK_Orders_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="EComm_Sum25_AModel.FK_OrderDetails_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="EComm_Sum25_AModel.FK_OrderDetails_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="EComm_Sum25_AModel.FK_Orders_Statuses" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

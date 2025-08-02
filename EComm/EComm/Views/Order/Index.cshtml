@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3 card" style="width: 18rem;">
+            <div class="card-body text-center">
+                <h5 class="card-title ">@item.Name</h5>
+                <p class="card-text">Price: <span class="badge">@item.Price</span></p>
+                <a href="/order/addtocart/@item.Id" class="btn btn-primary">Add to Cart</a>
+            </div>
+        </div>
+    }
+</div>
+    
+
+
+
