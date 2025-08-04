@@ -56,6 +56,7 @@
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="EComm_Sum25_AModel.User">
         <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Username" ColumnName="Username" />

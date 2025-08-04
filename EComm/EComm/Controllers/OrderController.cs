@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using EComm.Auth;
 using EComm.DTOs;
 using EComm.EF;
+using EComm.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,7 +43,7 @@ namespace EComm.Controllers
             }
             cart.Add(pr);
             Session["cart"] = cart;
-            TempData["Msg"] = pr.Name+ " added to cart";
+            
             
             return RedirectToAction("Index");
 
@@ -75,11 +77,14 @@ namespace EComm.Controllers
             return View(cart);
         }
         [HttpPost]
+        [Logged]
         public ActionResult PlaceOrder(double gTotal) {
+
+            var user = (User)Session["User"];
             var order = new Order() { 
                 Total = gTotal,
-                CustomerId = 1,
-                StatusId = 1,
+                CustomerId = (int)user.CustomerId,
+                StatusId = (int) OrderStatus.OrderPlaced,
                 Date = DateTime.Now,
             };
             db.Orders.Add(order);

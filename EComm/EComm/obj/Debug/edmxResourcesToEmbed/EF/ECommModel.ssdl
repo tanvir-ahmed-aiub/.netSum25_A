@@ -57,6 +57,7 @@
     <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerId" Type="int" />
   </EntityType>
   <Association Name="FK_OrderDetails_Orders">
     <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
