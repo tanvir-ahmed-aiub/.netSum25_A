@@ -200,7 +200,9 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="DTOs\OrderDetailDTO.cs" />
     <Compile Include="DTOs\OrderDTO.cs" />
+    <Compile Include="DTOs\OrderProductDTO.cs" />
     <Compile Include="DTOs\ProductDTO.cs" />
     <Compile Include="EF\Customer.cs">
       <DependentUpon>ECommModel.tt</DependentUpon>
@@ -298,6 +300,7 @@
     <Content Include="Views\Order\ShowCart.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Order\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

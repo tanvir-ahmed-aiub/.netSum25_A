@@ -18,7 +18,17 @@
             <td>@item.Id</td>
             <td>@item.Date</td>
             <td>@item.Total</td>
-            <td>@item.StatusId</td>
+            @{
+                EComm.Enums.OrderStatus status = (EComm.Enums.OrderStatus)item.StatusId;
+            }
+            <td>@status.ToString()</td>
+            <td>
+                <a href="/order/details/@item.Id" class="btn btn-primary">Details</a>
+                @if (item.StatusId == (int) EComm.Enums.OrderStatus.OrderPlaced) { 
+                    <a href="/order/cancelbyuser/@item.Id" class="btn btn-danger">Cancel</a>
+                }
+                
+            </td>
         </tr>
     }
 </table>

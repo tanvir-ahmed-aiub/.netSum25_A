@@ -104,5 +104,17 @@ namespace EComm.Controllers
             Session["cart"] = null;
             return RedirectToAction("Index");
         }
+        public ActionResult Details(int id) {
+            var od = db.Orders.Find(id);
+            var mapper = CustomerController.GetMapper();
+            var order = mapper.Map<OrderProductDTO>(od);
+            return View(order);
+        }
+        public ActionResult CancelByUser(int id) { 
+            var order = db.Orders.Find(id);
+            order.StatusId = (int)OrderStatus.CancelledByUser;
+            db.SaveChanges();
+            return RedirectToAction("Index","Customer");
+        }
     }
 }
