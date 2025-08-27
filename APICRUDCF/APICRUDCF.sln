@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APICRUDCF", "APICRUDCF\APICRUDCF.csproj", "{51BB5DB1-F247-429D-8A22-665F3EFDF551}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51BB5DB1-F247-429D-8A22-665F3EFDF551}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51BB5DB1-F247-429D-8A22-665F3EFDF551}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51BB5DB1-F247-429D-8A22-665F3EFDF551}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51BB5DB1-F247-429D-8A22-665F3EFDF551}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D8C9B5A9-EC1A-4D0A-B401-ED4C6499417E}
+	EndGlobalSection
+EndGlobal
