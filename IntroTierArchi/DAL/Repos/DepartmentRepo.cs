@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    internal class CourseRepo : IRepo<Course, int, bool>
+    internal class DepartmentRepo : IRepo<Department, int, Department>
     {
-        public bool Create(Course obj)
+        public Department Create(Department obj)
         {
             throw new NotImplementedException();
         }
@@ -19,17 +19,17 @@ namespace DAL.Repos
             throw new NotImplementedException();
         }
 
-        public List<Course> Get()
+        public List<Department> Get()
         {
             throw new NotImplementedException();
         }
 
-        public Course Get(int id)
+        public Department Get(int id)
         {
             throw new NotImplementedException();
         }
 
-        public bool Update(Course obj)
+        public Department Update(Department obj)
         {
             throw new NotImplementedException();
         }

@@ -1,4 +1,5 @@
 ﻿using DAL.EF.Tables;
+using DAL.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,31 +8,36 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    internal class CourseRepo : IRepo<Course, int, bool>
+    public class StudentRepoV2 : IStudentRepo
     {
-        public bool Create(Course obj)
+        public bool Create(Student s)
         {
             throw new NotImplementedException();
         }
+
+        public void CreateStudent(Student s) { }
 
         public bool Delete(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<Course> Get()
+        public List<Student> Get()
         {
             throw new NotImplementedException();
         }
 
-        public Course Get(int id)
+        public Student Get(int id)
         {
             throw new NotImplementedException();
         }
 
-        public bool Update(Course obj)
+        public bool Update(Student s)
         {
             throw new NotImplementedException();
         }
+
+        public void UpdateStudent() { }
+
     }
 }

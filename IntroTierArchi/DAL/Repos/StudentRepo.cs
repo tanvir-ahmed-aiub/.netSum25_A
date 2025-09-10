@@ -1,5 +1,6 @@
 ﻿using DAL.EF;
 using DAL.EF.Tables;
+using DAL.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    public class StudentRepo
+    internal class StudentRepo : IRepo<Student,int,bool>, IStudentFeature
     {
         UMSContext db;
         public StudentRepo() {
@@ -34,6 +35,13 @@ namespace DAL.Repos
             var exobj = Get(id);
             db.Students.Remove(exobj);
             return db.SaveChanges() > 0;
+        }
+        public float CalculateCgpa(int id) {
+            //
+            //
+            //
+            //
+            return 3.45f;
         }
     }
 }

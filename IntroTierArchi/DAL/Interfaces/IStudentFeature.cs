@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL
+namespace DAL.Interfaces
 {
-    public class Class1
+    public interface IStudentFeature
     {
+        float CalculateCgpa(int id);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BLL.DTOs;
+using DAL;
 using DAL.EF.Tables;
 using DAL.Repos;
 using System;
@@ -19,11 +20,11 @@ namespace BLL.Services
             return new Mapper(config);
         }
         public static List<StudentDTO> Get() {
-            var data = new StudentRepo().Get();
+            var data = DataAccessFactory.StudentData().Get();
             return GetMapper().Map<List<StudentDTO>>(data);
         }
         public static List<StudentDTO> GetSch() {
-            var data = new StudentRepo().Get();
+            var data = DataAccessFactory.StudentData().Get();
             var sch = (from s in data
                        where s.Id >= 1 && s.Id <= 10
                        select s).ToList();
@@ -31,8 +32,12 @@ namespace BLL.Services
         }
         public static bool Create(StudentDTO s) {
             var st = GetMapper().Map<Student>(s);
-            return new StudentRepo().Create(st);
+            return DataAccessFactory.StudentData().Create(st);
             
+        }
+        public static float GetCgpa(int id) { 
+            var cgpa = DataAccessFactory.StudentFeature().CalculateCgpa(id);
+            return cgpa;
         }
     }
 }
