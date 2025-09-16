@@ -1,5 +1,6 @@
 ﻿namespace DAL.Migrations
 {
+    using DAL.EF.Tables;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -14,6 +15,22 @@
 
         protected override void Seed(DAL.EF.UMSContext context)
         {
+            /*User admin = new User() { 
+                Uname="admin",
+                Password="admin",
+                Type="Admin"
+
+            };
+            context.Users.Add(admin);
+            User user = new User()
+            {
+                Uname = "user",
+                Password = "user",
+                Type = "User"
+
+            };
+            context.Users.Add(user);
+            context.SaveChanges();*/
             //for (int i = 0; i < 10; i++) {
             //    context.Students.Add(new EF.Tables.Student()
             //    {

@@ -52,18 +52,36 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccessFactory.cs" />
+    <Compile Include="EF\Tables\Course.cs" />
+    <Compile Include="EF\Tables\Department.cs" />
     <Compile Include="EF\Tables\Student.cs" />
+    <Compile Include="EF\Tables\Token.cs" />
+    <Compile Include="EF\Tables\User.cs" />
     <Compile Include="EF\UMSContext.cs" />
+    <Compile Include="Interfaces\IAuth.cs" />
+    <Compile Include="Interfaces\IStudentFeature.cs" />
     <Compile Include="Interfaces\IStudentRepo.cs" />
     <Compile Include="Migrations\202509030544262_initDB.cs" />
     <Compile Include="Migrations\202509030544262_initDB.designer.cs">
       <DependentUpon>202509030544262_initDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202509110549165_UpdatedDB.cs" />
+    <Compile Include="Migrations\202509110549165_UpdatedDB.designer.cs">
+      <DependentUpon>202509110549165_UpdatedDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202509150537032_RoleBased.cs" />
+    <Compile Include="Migrations\202509150537032_RoleBased.designer.cs">
+      <DependentUpon>202509150537032_RoleBased.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\CourseRepo.cs" />
+    <Compile Include="Repos\DepartmentRepo.cs" />
+    <Compile Include="Repos\IRepo.cs" />
     <Compile Include="Repos\StudentRepo.cs" />
     <Compile Include="Repos\StudentRepoV2.cs" />
+    <Compile Include="Repos\TokenRepo.cs" />
+    <Compile Include="Repos\UserRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -72,6 +90,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202509030544262_initDB.resx">
       <DependentUpon>202509030544262_initDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202509110549165_UpdatedDB.resx">
+      <DependentUpon>202509110549165_UpdatedDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202509150537032_RoleBased.resx">
+      <DependentUpon>202509150537032_RoleBased.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

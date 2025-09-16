@@ -24,5 +24,11 @@ namespace DAL
         {
             return new CourseRepo();
         }
+        public static IAuth AuthData() {
+            return new UserRepo();
+        }
+        public static IRepo<Token, string, Token> TokenData() {
+            return new TokenRepo();
+        }
     }
 }

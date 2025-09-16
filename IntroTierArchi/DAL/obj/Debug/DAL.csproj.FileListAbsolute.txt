@@ -12,3 +12,5 @@ C:\Users\Tanvir Ahmed\Desktop\.NET\A\IntroTierArchi\DAL\bin\Debug\EntityFramewor
 C:\Users\Tanvir Ahmed\Desktop\.NET\A\IntroTierArchi\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\Tanvir Ahmed\Desktop\.NET\A\IntroTierArchi\DAL\obj\Debug\DAL.Migrations.initDB.resources
 C:\Users\Tanvir Ahmed\Desktop\.NET\A\IntroTierArchi\DAL\obj\Debug\DAL.csproj.GenerateResource.cache
+C:\Users\Tanvir Ahmed\Desktop\.NET\A\IntroTierArchi\DAL\obj\Debug\DAL.Migrations.UpdatedDB.resources
+C:\Users\Tanvir Ahmed\Desktop\.NET\A\IntroTierArchi\DAL\obj\Debug\DAL.Migrations.RoleBased.resources
